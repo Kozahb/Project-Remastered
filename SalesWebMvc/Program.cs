@@ -3,6 +3,10 @@ using Microsoft.Extensions.DependencyInjection;
 using SalesWebMvc.Data;
 using System.Configuration;
 using SalesWebMvc.Services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
     options.UseMySql(
@@ -19,6 +23,22 @@ builder.Services.AddScoped<DepartmentService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+// CultureInfo, Localization
+// https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization/select-language-culture?view=aspnetcore-8.0
+var ciList = new List<CultureInfo> {
+                new("en-US")
+                ,new("pt-BR")
+                ,new("ja-JP")
+            };
+var localizationOptions = new RequestLocalizationOptions
+{
+    SupportedCultures = ciList,
+    SupportedUICultures = ciList,
+    DefaultRequestCulture = new RequestCulture(ciList[0])
+};
+app.UseRequestLocalization(localizationOptions);
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
