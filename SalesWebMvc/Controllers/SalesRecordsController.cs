@@ -1,10 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesWebMvc.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalesWebMvc.Controllers
 {
     public class SalesRecordsController : Controller
     {
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime Date { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:F2}")]
+
         private readonly SalesRecordService _salesRecordService;
         public IActionResult Index()
         {
