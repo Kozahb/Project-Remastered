@@ -52,7 +52,6 @@ Fully implemented Create, Read, Update, and Delete operations for user managemen
 Plans for CI/CD using **GitHub Actions**:
 - ✅ Build and test automation
 - 🔄 Continuous integration with pull requests
-- 📦 Deployment pipeline (coming soon)
 
 ---
 
