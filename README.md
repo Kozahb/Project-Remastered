@@ -73,4 +73,4 @@ dotnet run
 👨‍💻 Author
  by Thaleson Eduardo 👽
 
-<p align="center"> <a href="https://github.com/Kozahb" target="_blank"> <img src="https://img.shields.io/github/followers/Kozahb?label=Follow&style=social" alt="GitHub Followers"> </a> </p> ```
+
